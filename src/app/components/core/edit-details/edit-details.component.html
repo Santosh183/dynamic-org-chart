@@ -1,0 +1,35 @@
+<clr-modal [(clrModalOpen)]="editModalState">
+    <h3 class="modal-title">Edit Details</h3>
+    <div class="modal-body">
+        <div class="form-item">
+            <span>
+                Edit Employee Details
+            </span>
+        </div>
+        <div class="form-item">
+            <label>Employee name</label>
+            <input clrInput placeholder="Enter Employe Name" name="name" [(ngModel)]="name" />
+        </div>
+        <div class="form-item">
+            <label>Designation</label>
+            <select clrSelect name="options" [(ngModel)]="designation">
+                <option value="">Select Employee Designation</option>
+                @for (designation of designations; track designation) {
+                <option [value]="designation">{{designation}}</option>
+                }
+            </select>
+        </div>
+        <div class="form-item">
+            <label>Email Id</label>
+            <input clrInput placeholder="Enter Email" type="email" name="name" [(ngModel)]="email" />
+        </div>
+        <div class="form-item">
+            <label>Phone Number</label>
+            <input clrInput placeholder="Enter Phone number" name="name" [(ngModel)]="phone" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="editModalState.set(false)">CANCEL</button>
+        <button type="button" class="btn btn-primary" (click)="onEditDetails()">UPDATE</button>
+    </div>
+</clr-modal>

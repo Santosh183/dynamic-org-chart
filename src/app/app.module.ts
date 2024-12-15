@@ -16,6 +16,9 @@ import { getEmplpoyeesReducer } from './store/employees.reducer';
 import { ActionsComponent } from './components/core/actions/actions.component';
 import { AddReporteeComponent } from './components/core/add-reportee/add-reportee.component';
 import { FormsModule } from '@angular/forms';
+import { DeleteReporteeComponent } from './components/core/delete-reportee/delete-reportee.component';
+import { ChangeManagerComponent } from './components/core/change-manager/change-manager.component';
+import { EditDetailsComponent } from './components/core/edit-details/edit-details.component';
 
 ClarityIcons.addIcons(
   tableIcon, usersIcon, trashIcon,
@@ -31,6 +34,9 @@ ClarityIcons.addIcons(
     GridViewComponent,
     ActionsComponent,
     AddReporteeComponent,
+    DeleteReporteeComponent,
+    ChangeManagerComponent,
+    EditDetailsComponent,
   ],
   imports: [
     BrowserModule,

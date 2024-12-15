@@ -1,0 +1,28 @@
+<clr-modal [(clrModalOpen)]="changeManagerModalState">
+    <h3 class="modal-title">Change Employee Reporting Line</h3>
+    <div class="modal-body">
+        <div class="form-item">
+            <span>
+                Reassign this employee to report to a new manager. Select the desired manager from the avalable options
+                to update the reporting hierarchy in the organization chart.
+            </span>
+        </div>
+        <div class="form-item">
+            <label>Employee Name</label>
+            <span> {{employee().name}}</span>
+        </div>
+        <div class="form-item">
+            <label>Manager Name</label>
+            <select clrSelect name="options" [(ngModel)]="newManagerId">
+                <option [value]="0">Select New Reporting Manager</option>
+                @for (manager of potentialManagers; track manager.id) {
+                <option [value]="manager.id">{{manager.name}}</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="changeManagerModalState.set(false)">CANCEL</button>
+        <button type="button" class="btn btn-primary" (click)="onAddReportee()">CHANGE REPORTING</button>
+    </div>
+</clr-modal>

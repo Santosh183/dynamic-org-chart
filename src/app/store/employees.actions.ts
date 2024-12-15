@@ -7,14 +7,14 @@ export enum ActionTypes {
     DELETE_EMPLOYEE = 'DELETE_EMPLOYEE'
 }
 
-export const updateEmployees = createAction(
+export const updateEmployee = createAction(
     ActionTypes.UPDATE_EMPLOYEE,
     props<{ employee: Employee }>()
 );
 
 export const deleteEmployee = createAction(
     ActionTypes.DELETE_EMPLOYEE,
-    props<{ id: number }>()
+    props<{ employee: Employee }>()
 );
 
 export const insertEmployee = createAction(

@@ -7,22 +7,29 @@
             <cds-icon shape="add-text"></cds-icon>
             <span> Add Reportee</span>
         </div>
-        <div clrDropdownItem class="option-item">
+        <div clrDropdownItem (click)="showEditModal = true" class="option-item">
             <cds-icon shape="pencil"></cds-icon>
             <span> Edit Details</span>
         </div>
-        <div clrDropdownItem class="option-item">
+        @if(employee().managerId) {
+        <div clrDropdownItem (click)="showDeleteModal = true" class="option-item">
             <cds-icon shape="trash"></cds-icon>
             <span> Delete Employee</span>
         </div>
-        <div clrDropdownItem class="option-item">
+        <div clrDropdownItem (click)="showChangeManagerModal = true" class="option-item">
             <cds-icon shape="two-way-arrows"></cds-icon>
             <span> Change Reporting Line</span>
         </div>
+        }
     </clr-dropdown-menu>
 </clr-dropdown>
 <div class="modals">
     <app-add-reportee [manager]="employee()" [(modalState)]="showAddModal">
-
     </app-add-reportee>
+    <app-change-manager [employee]="employee()" [(changeManagerModalState)]="showChangeManagerModal">
+    </app-change-manager>
+    <app-delete-reportee [employee]="employee()" [(deleteModalState)]="showDeleteModal">
+    </app-delete-reportee>
+    <app-edit-details [employee]="employee()" [(editModalState)]="showEditModal">
+    </app-edit-details>
 </div>

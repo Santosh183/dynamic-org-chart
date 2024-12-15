@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
+import { Employee } from '../../../data/types';
 
 @Component({
   selector: 'app-actions',
@@ -7,6 +8,8 @@ import { Component, input } from '@angular/core';
 })
 export class ActionsComponent {
   showAddModal = false;
-  employee = input();
-
+  showChangeManagerModal = false;
+  showDeleteModal = false;
+  showEditModal = false;
+  employee: InputSignal<Employee | any> = input()
 }

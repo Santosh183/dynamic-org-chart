@@ -1,7 +1,7 @@
 import { Component, model, input, InputSignal } from '@angular/core';
 import { DesignationEnum, Employee } from '../../../data/types';
 import { Store } from '@ngrx/store';
-import { ActionTypes, insertEmployee } from '../../../store/employees.actions';
+import { insertEmployee } from '../../../store/employees.actions';
 import { selectEmployeesState } from '../../../store/employees.selectors';
 
 @Component({
