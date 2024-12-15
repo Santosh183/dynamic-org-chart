@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/core/header/header.component';
 import '@cds/core/icon/register.js';
-import { addTextIcon, ClarityIcons, ellipsisVerticalIcon, pencilIcon, tableIcon, trashIcon, twoWayArrowsIcon, usersIcon } from '@cds/core/icon';
+import { addTextIcon, banIcon, ClarityIcons, ellipsisVerticalIcon, organizationIcon, pencilIcon, tableIcon, trashIcon, twoWayArrowsIcon, usersIcon } from '@cds/core/icon';
 import { GraphViewComponent } from './components/org-graph/graph-view/graph-view.component';
 import { GridViewComponent } from './components/org-grid/grid-view/grid-view.component';
 import { StoreModule } from '@ngrx/store';
@@ -19,9 +19,10 @@ import { FormsModule } from '@angular/forms';
 import { DeleteReporteeComponent } from './components/core/delete-reportee/delete-reportee.component';
 import { ChangeManagerComponent } from './components/core/change-manager/change-manager.component';
 import { EditDetailsComponent } from './components/core/edit-details/edit-details.component';
+import { EmployeeCardComponent } from './components/org-graph/employee-card/employee-card.component';
 
 ClarityIcons.addIcons(
-  tableIcon, usersIcon, trashIcon,
+  tableIcon, usersIcon, banIcon, organizationIcon,
   twoWayArrowsIcon, pencilIcon, addTextIcon,
   ellipsisVerticalIcon
 );
@@ -37,6 +38,7 @@ ClarityIcons.addIcons(
     DeleteReporteeComponent,
     ChangeManagerComponent,
     EditDetailsComponent,
+    EmployeeCardComponent,
   ],
   imports: [
     BrowserModule,
