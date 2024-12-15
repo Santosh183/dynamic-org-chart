@@ -1,0 +1,38 @@
+header {
+    justify-content: center;
+}
+
+.header-nav::before {
+    display: none;
+}
+
+a:visited {
+    color: var(--clr-link-color);
+
+    cds-icon {
+        color: var(--clr-link-color);
+    }
+}
+
+a {
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid var(--clr-link-color);
+    color: var(--clr-link-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &.active {
+        background: var(--clr-link-color);
+        color: white;
+
+        span {
+            color: var(--cds-global-color-construction-800);
+        }
+
+        cds-icon {
+            color: white;
+        }
+    }
+}

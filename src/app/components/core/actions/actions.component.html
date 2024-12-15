@@ -1,0 +1,28 @@
+<clr-dropdown [clrCloseMenuOnItemClick]="true">
+    <button clrDropdownTrigger aria-label="Dropdown button">
+        <ng-content></ng-content>
+    </button>
+    <clr-dropdown-menu *clrIfOpen clrPosition="bottom-left">
+        <div clrDropdownItem (click)="showAddModal = true" class="option-item">
+            <cds-icon shape="add-text"></cds-icon>
+            <span> Add Reportee</span>
+        </div>
+        <div clrDropdownItem class="option-item">
+            <cds-icon shape="pencil"></cds-icon>
+            <span> Edit Details</span>
+        </div>
+        <div clrDropdownItem class="option-item">
+            <cds-icon shape="trash"></cds-icon>
+            <span> Delete Employee</span>
+        </div>
+        <div clrDropdownItem class="option-item">
+            <cds-icon shape="two-way-arrows"></cds-icon>
+            <span> Change Reporting Line</span>
+        </div>
+    </clr-dropdown-menu>
+</clr-dropdown>
+<div class="modals">
+    <app-add-reportee [manager]="employee()" [(modalState)]="showAddModal">
+
+    </app-add-reportee>
+</div>

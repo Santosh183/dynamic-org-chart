@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.clr-form-control {
+    margin: 0;
+}
+
+.modal-body-wrapper {
+    overflow: unset;
+}
+
+clr-input-container,
+clr-select-container {
+    flex-grow: 1;
+}
+
+
+.clr-select-wrapper,
+.clr-input-wrapper {
+    width: 100%;
+
+    input,
+    select {
+        width: 100%;
+    }
+}
+
+.clr-control-container {
+    width: 100%;
+}

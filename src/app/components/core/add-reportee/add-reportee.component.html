@@ -1,0 +1,40 @@
+<clr-modal [(clrModalOpen)]="modalState">
+    <h3 class="modal-title">Add New Reportee</h3>
+    <div class="modal-body">
+        <div class="form-item">
+            <span>
+                Add a new emmployee who will report directly to this perosn. Provide details like name, designation,
+                email and phone to create their profile in orgnization chart.
+            </span>
+        </div>
+        <div class="form-item">
+            <label>Manager name</label>
+            <span> {{manager().name}}</span>
+        </div>
+        <div class="form-item">
+            <label>Employee name</label>
+            <input clrInput placeholder="Enter Employe Name" name="name" [(ngModel)]="name" />
+        </div>
+        <div class="form-item">
+            <label>Designation</label>
+            <select clrSelect name="options" [(ngModel)]="designation">
+                <option value="">Select Employee Designation</option>
+                @for (designation of designations; track designation) {
+                <option [value]="designation">{{designation}}</option>
+                }
+            </select>
+        </div>
+        <div class="form-item">
+            <label>Email Id</label>
+            <input clrInput placeholder="Enter Email" type="email" name="name" [(ngModel)]="email" />
+        </div>
+        <div class="form-item">
+            <label>Phone Number</label>
+            <input clrInput placeholder="Enter Phone number" name="name" [(ngModel)]="phone" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modalState.set(false)">CANCEL</button>
+        <button type="button" class="btn btn-primary" (click)="onAddReportee()">ADD REPORTEE</button>
+    </div>
+</clr-modal>

@@ -1,0 +1,22 @@
+.modal-body {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-title {
+    text-align: left;
+}
+
+.form-item {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+
+    label {
+        width: 30%;
+    }
+}

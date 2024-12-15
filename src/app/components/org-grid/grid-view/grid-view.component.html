@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th class="left menu"></th>
+            <th class="left">Employee Name</th>
+            <th class="left">Employee Id</th>
+            <th class="left">Designation</th>
+            <th class="left">Email</th>
+            <th class="left">Phone</th>
+            <th class="left">Manager</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (employee of data; track employee.id) {
+        <tr>
+            <td>
+                <app-actions [employee]="employee">
+                    <cds-icon shape="ellipsis-vertical"></cds-icon>
+                </app-actions>
+            </td>
+            <td class="left"> {{employee.name}}</td>
+            <td class="left">{{employee.id}}</td>
+            <td class="left">{{employee.designation}}</td>
+            <td class="left">{{employee.email}}</td>
+            <td class="left">{{employee.phone}}</td>
+            <td class="left">{{employee.managerId}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
