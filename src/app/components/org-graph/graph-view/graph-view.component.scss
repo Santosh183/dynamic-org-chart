@@ -1,7 +1,32 @@
 #graph-container {
     width: 100vw;
     height: 100%;
-    overflow: auto;
     max-width: 100vw;
     max-height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cog-container {
+    width: 100vw;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.org-hirearchy-container {
+    width: 100vw;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 600px;
+    position: relative;
+    overflow: auto;
+}
+
+.card-cog {
+    position: absolute;
 }

@@ -1,3 +1,13 @@
-<div id="graph-container">
+<div class="org-hirearchy-container">
+    <div id="graph-container">
 
+    </div>
+    <div class="cog-container">
+        @for (employee of treeData; track employee.data.id) {
+        <app-actions [employee]="employee.data" class="card-cog" [style.left]="(employee.x+140)+'px'"
+            [style.top]="(employee.y+10)+'px'">
+            <cds-icon shape="cog"></cds-icon>
+        </app-actions>
+        }
+    </div>
 </div>

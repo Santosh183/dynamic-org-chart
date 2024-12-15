@@ -13,8 +13,10 @@ import { Store } from '@ngrx/store';
 export class GraphViewComponent implements OnInit {
 
   data: Employee[] | any;
+  treeData: any;
   constructor(private store: Store) {
     this.data = [];
+    this.treeData = [];
   }
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class GraphViewComponent implements OnInit {
       (emps: Employee[] | any) => {
         this.data = emps;
         this.createBarChart(emps);
+        console.log(this.treeData)
       }
     );
   }
@@ -34,6 +37,7 @@ export class GraphViewComponent implements OnInit {
     const dataStructure = d3.stratify().id((d: any) => d.id).parentId((d: any) => d.managerId)(data);
     const treeStructure = d3.tree().size([1500, 550]);
     const information = treeStructure(dataStructure);
+    this.treeData = information.descendants();
     const connections = svg.append("g").selectAll("path").data(information.links());
     connections.enter().append("path").attr("d", (d: any) => {
       return "M " + (d.source.x + 130) + "," + (d.source.y + 50) + " v 70 H" + (d.target.x + 100) + "V" + d.target.y;
