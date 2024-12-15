@@ -26,3 +26,23 @@ clr-select-container {
 .clr-control-container {
     width: 100%;
 }
+
+path {
+    fill: none;
+    stroke: silver;
+}
+
+rect {
+    fill: var(--cds-global-color-construction-800);
+    stroke: silver;
+    width: 280px;
+    height: 120px;
+}
+
+text {
+    stroke-width: 1px;
+    stroke: silver;
+    fill: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
