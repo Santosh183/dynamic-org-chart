@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { Employee } from "../data/types";
 import { LocalStorageService } from "../services/local-storage.service";
-import { deleteEmployee, insertEmployee, updateEmployee } from "./employees.actions";
+import { deleteEmployee, insertEmployee, resetData, updateEmployee } from "./employees.actions";
 
 const localStorageS = new LocalStorageService()
 export const initialEmployeesState: Employee[] = localStorageS.getEmployees();
@@ -35,5 +35,9 @@ export const getEmplpoyeesReducer = createReducer(
         })
         localStorageS.setEmployees(newEmployees)
         return [...newEmployees];
-    })
+    }),
+    on(resetData, (employees, { }) => {
+        const newEmployees = localStorageS.resetEmployeeData();
+        return newEmployees;
+    }),
 ); 

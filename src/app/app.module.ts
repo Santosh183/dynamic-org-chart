@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/core/header/header.component';
 import '@cds/core/icon/register.js';
-import { addTextIcon, banIcon, ClarityIcons, cogIcon, ellipsisVerticalIcon, organizationIcon, pencilIcon, tableIcon, trashIcon, twoWayArrowsIcon, userIcon, usersIcon } from '@cds/core/icon';
+import { addTextIcon, banIcon, ClarityIcons, cogIcon, ellipsisVerticalIcon, organizationIcon, pencilIcon, refreshIcon, tableIcon, trashIcon, twoWayArrowsIcon, userIcon, usersIcon } from '@cds/core/icon';
 import { GraphViewComponent } from './components/org-graph/graph-view/graph-view.component';
 import { GridViewComponent } from './components/org-grid/grid-view/grid-view.component';
 import { StoreModule } from '@ngrx/store';
@@ -24,7 +24,7 @@ import { EmployeeCardComponent } from './components/org-graph/employee-card/empl
 ClarityIcons.addIcons(
   tableIcon, usersIcon, banIcon, organizationIcon,
   twoWayArrowsIcon, pencilIcon, addTextIcon,
-  ellipsisVerticalIcon, cogIcon, userIcon
+  ellipsisVerticalIcon, cogIcon, userIcon, refreshIcon
 );
 
 @NgModule({

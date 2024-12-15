@@ -22,6 +22,7 @@ export class LocalStorageService {
 
   resetEmployeeData() {
     this.setEmployees(initialData);
+    return initialData;
   }
 
 
