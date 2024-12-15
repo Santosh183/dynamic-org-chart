@@ -43,12 +43,12 @@ export class GraphViewComponent implements OnInit {
     const names = svg.append("g").selectAll("text").data(information.descendants());
     names.enter().append("text").text((d: any) => d.data.name).attr("x", (d: any) => d.x + 10).attr("y", (d: any) => d.y + 4)
     const phones = svg.append("g").selectAll("text").data(information.descendants());
-    phones.enter().append("text").text((d: any) => `Phone: ${d.data.phone}`).attr("x", (d: any) => d.x + 55).attr("y", (d: any) => d.y + 75)
+    phones.enter().append("text").text((d: any) => `Phone: ${d.data.phone}`).attr("x", (d: any) => d.x + 45).attr("y", (d: any) => d.y + 75)
     const emails = svg.append("g").selectAll("text").data(information.descendants());
-    emails.enter().append("text").text((d: any) => `Email: ${d.data.email}`).attr("x", (d: any) => d.x + 55).attr("y", (d: any) => d.y + 55)
+    emails.enter().append("text").text((d: any) => `Email: ${d.data.email}`).attr("x", (d: any) => d.x + 45).attr("y", (d: any) => d.y + 55)
     const designations = svg.append("g").selectAll("text").data(information.descendants());
-    designations.enter().append("text").text((d: any) => d.data.designation).attr("x", (d: any) => d.x + 55).attr("y", (d: any) => d.y + 35)
+    designations.enter().append("text").text((d: any) => d.data.designation).attr("x", (d: any) => d.x + 45).attr("y", (d: any) => d.y + 35)
     const userPics = svg.append("g").selectAll("g").data(information.descendants());
-    userPics.enter().append('g').attr("transform", (d: any) => `translate(${d.x + 10}, ${d.y + 30})`).append("path").attr("d", userPath);
+    userPics.enter().append('g').attr("transform", (d: any) => `translate(${d.x}, ${d.y + 30})`).append("path").attr("d", userPath);
   }
 }
